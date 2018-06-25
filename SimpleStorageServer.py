@@ -13,7 +13,7 @@ class SimpleStorageServerRequestHandler(BaseHTTPRequestHandler):
 
 	def register(self, username, password):
 		'''register a user with username and password'''
-		if username and passwd and \
+		if username and password and \
 		   len(username) > 3 and len(username) < 20 and \
 		   str(username).isalnum() and len(password) >= 8:
 			self.user_passwd[username] = password
@@ -25,7 +25,7 @@ class SimpleStorageServerRequestHandler(BaseHTTPRequestHandler):
 			print "Invalid: length of username is not between 3 and 20"
 		elif not str(username).isalnum():
 			print "Invalid: username contains non alphanumeric characters"
-		elif not passwd:
+		elif not password:
 			print "Invalid: password is empty"
 		elif len(password) < 8:
 			print "Invalid: password is less than 8 characters"
